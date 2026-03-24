@@ -4,13 +4,13 @@ CONSTANT_VAL = 3.14  # Global constant
 
 def calculate_area(radius):
     """Calculates the area of a circle."""
-    return math.pi * (radius ** 2)
+    return CONSTANT_VAL * (radius ** 2)
 
-def main():
+def calculate(value):
     # Main execution logic
-    user_radius = 5
-    area = calculate_area(user_radius)
+    area = calculate_area(value)
     print(f"The area is {area}")
 
 if __name__ == "__main__":
-    main()
+    x = float(input('Enter user radius: '))
+    calculate(x)
