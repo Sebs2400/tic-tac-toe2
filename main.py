@@ -4,6 +4,16 @@ board = [" " for _ in range(9)]
 current_player = "X"
 game_over = False
 turns_played = 0
+# This function checks if the game has ended in a tie by verifying all squares are filled but no player won.
+def is_tie(board):
+    return all(square != " " for square in board)
+# This function will switch the current player from "X" to "O" and vice versa.
+def change_player():
+        global current_player
+        if current_player == "X":
+            current_player = "O"
+        else:
+            current_player = "X"
 
 print("Welcome to Terminal Tic-Tac-Toe!")
 
@@ -68,10 +78,16 @@ while not game_over:
         print(f"  7 | 8 | 9      {board[6]} | {board[7]} | {board[8]}")
         print(f"\nCongratulations, Player {current_player}! You win!") 
         game_over = True
-        break 
+        break
 
-    def change_player():
-        print(f"Player {current_player} has made their move.")
+    if is_tie(board):
+        print("\nThe game is a tie! No more moves possible.")
+        game_over = True
+        break 
+    
+    if not game_over:
+        change_player()
+    print(f"Player {current_player} has made their move.")
 
 if __name__ == "__main__":
 	# The pass is there so the terminal does not throw an error.
