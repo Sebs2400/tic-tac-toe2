@@ -70,13 +70,10 @@ while not game_over:
         game_over = True
         break 
 
-
-
-
-
-
+    def change_player():
+        print(f"Player {current_player} has made their move.")
 
 if __name__ == "__main__":
-	
+	# The pass is there so the terminal does not throw an error.
 	pass
     
