@@ -4,6 +4,16 @@ board = [" " for _ in range(9)]
 current_player = "X"
 game_over = False
 turns_played = 0
+# This function checks if the game has ended in a tie by verifying all squares are filled but no player won.
+def is_tie(board):
+    return all(square != " " for square in board)
+# This function will switch the current player from "X" to "O" and vice versa.
+def change_player():
+        global current_player
+        if current_player == "X":
+            current_player = "O"
+        else:
+            current_player = "X"
 
 print("Welcome to Terminal Tic-Tac-Toe!")
 
